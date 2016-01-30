@@ -8,6 +8,7 @@ public class Character : MonoBehaviour {
     public Animator animator;
     public bool FacingRight = false;
     bool walking = false;
+    bool blinking = false;
 
 	// Use this for initialization
 	void Start () {
@@ -60,6 +61,17 @@ public class Character : MonoBehaviour {
             {
                 walking = false;
                 animator.SetBool("Walking", false);
+            }
+            if (!blinking) { 
+                if (Random.Range(0.0f, 1.0f) > 0.99f)
+                {
+                    blinking = true;
+                    animator.SetBool("Blinking", true);
+                }
+            }
+            else {
+                blinking = false;
+                animator.SetBool("Blinking", false);
             }
         }
         if (gameObject.transform.position.x > 10)
