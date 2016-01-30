@@ -10,6 +10,9 @@ public class Character : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if (Input.GetKey(KeyCode.RightArrow))
+        {
+
+        }
 	}
 }
