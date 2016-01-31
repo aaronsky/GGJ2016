@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: You jump on the bed.
   unlocks: []
-  ID: 0
+  ID: 1
   startsActive: 0
 --- !u!212 &21259578
 SpriteRenderer:
@@ -104,6 +104,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: InteractiveObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ID
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

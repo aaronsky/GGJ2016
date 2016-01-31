@@ -6,6 +6,7 @@ public class Apartment : MonoBehaviour {
     public bool playerHasMoved = false;
     private Character player;
     private float destination;
+    private float chairPosition;
     
     // Use this for initialization
 	void Start () {
@@ -13,12 +14,15 @@ public class Apartment : MonoBehaviour {
         Timer.Subscribe(LeaveLastMinute, 8, 0);
         var go = GameObject.Find("Character");
         player = go.GetComponent<Character>();
-        destination = GameObject.Find("Chair").transform.position.x;
+        chairPosition = GameObject.Find("Chair").transform.position.x;
+        destination = chairPosition;
+
+        StateManager.SubwayDirection = 1;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (!player.hasBrokenOut || destination == 10)
+        if ((!player.hasBrokenOut || destination == 10) && !player.sitting)
         {
             var xpos = player.transform.position.x;
             var move = player.moveSpeed * Time.deltaTime;
@@ -28,6 +32,10 @@ public class Apartment : MonoBehaviour {
                 var pos = player.transform.position;
                 pos.x = destination;
                 player.transform.position = pos;
+                if (destination == chairPosition)
+                {
+                    player.Sit(chairPosition + 0.5f, GameObject.Find("Chair").transform.position.y + 1);
+                }
             }
             //player is to the left of destination
             else if (xpos < destination - move)
@@ -52,11 +60,13 @@ public class Apartment : MonoBehaviour {
         if (!player.hasBrokenOut)
         {
             destination = 10;
+            player.Stand();
         }
     }
 
     public void LeaveLastMinute(int hour, int minute)
     {
+        player.Stand();
         destination = 10;
     }
 }

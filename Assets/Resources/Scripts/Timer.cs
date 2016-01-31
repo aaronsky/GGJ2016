@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour {
 
     void Awake()
     {
+        eventTable = new Dictionary<int, Dictionary<int, List<Action<int, int>>>>();
         eventTable.Add(-1, new Dictionary<int, List<Action<int, int>>>());
         eventTable[-1].Add(-1, new List<Action<int, int>>());
     }

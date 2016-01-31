@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SceneObject : MonoBehaviour {
+
     public static float maxDistToPlayer;
     public string text;
     public List<string> unlocks;
@@ -76,6 +77,7 @@ public class SceneObject : MonoBehaviour {
     {
         if (!enabled)
             return;
+		GenerateTextBox ("Hello world!");
         var player = GameObject.Find("Character");
         if (player != null)
         {
@@ -110,6 +112,28 @@ public class SceneObject : MonoBehaviour {
             }
         }
     }
+
+	public void GenerateTextBox (string s)
+	{
+		/*var textBox = GameObject.Find("TextBox");
+		var writer = textBox.GetComponentInChildren<Writer> ();
+
+		if (textBox != null && writer != null) {
+			writer.SetText(s);
+
+			Renderer boxRend = textBox.GetComponent<Renderer> ();
+			boxRend.enabled = true;
+		
+			Renderer textRend = writer.GetComponent<Renderer> ();
+			textRend.enabled = true;
+
+
+		} else {
+			Debug.Log("Didn't find TextBox GameObject!");
+		}
+        */
+
+	}
 
 	// Update is called once per frame
 	void Update () {

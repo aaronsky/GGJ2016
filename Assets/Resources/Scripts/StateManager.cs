@@ -6,6 +6,7 @@ public class StateManager : MonoBehaviour {
 
     public static Dictionary<string, Dictionary<string, bool>> activeList;
     public static List<string> cleanLevels = new List<string>();
+    public static int SubwayDirection;
 
 	// Use this for initialization
 	void Start () {
@@ -55,6 +56,7 @@ public class StateManager : MonoBehaviour {
     public static void SaveState()
     {
         var interactiveObjects = FindObjectsOfType<SceneObject>();
+        activeList = null;
         activeList = new Dictionary<string, Dictionary<string, bool>>();
         foreach (var so in interactiveObjects)
         {

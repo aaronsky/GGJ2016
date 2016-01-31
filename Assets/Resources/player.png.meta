@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 925879a91ab5ca24bb9ea27c5d1cc024
-timeCreated: 1454179137
-licenseType: Free
+timeCreated: 1454218012
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: player_0
@@ -10,6 +10,8 @@ TextureImporter:
     21300006: player_3
     21300008: player_4
     21300010: player_5
+    21300012: player_6
+    21300014: player_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,7 +62,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 191
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -70,7 +72,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 191
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -80,7 +82,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 127
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -90,7 +92,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 127
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -100,7 +102,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 63
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -110,7 +112,27 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 63
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
         width: 64
         height: 64
       alignment: 0
