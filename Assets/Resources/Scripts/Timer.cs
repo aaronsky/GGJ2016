@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour {
     public int minutes = 30;
     public float tickInterval = 0.5f;
     private static Dictionary<int, Dictionary<int, List<Action<int, int>>>> eventTable = new Dictionary<int, Dictionary<int, List<Action<int, int>>>>();
-
+    public static bool clockIsRunning = true;
 
     void Awake()
     {
@@ -30,14 +30,17 @@ public class Timer : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(tickInterval);
-            minutes += 1;
-            if (minutes > 59)
+            if (clockIsRunning)
             {
-                minutes = 0;
-                hours += 1;
-                if (hours > 23)
+                minutes += 1;
+                if (minutes > 59)
                 {
-                    hours = 0;
+                    minutes = 0;
+                    hours += 1;
+                    if (hours > 23)
+                    {
+                        hours = 0;
+                    }
                 }
             }
             FireEventAt(hours, minutes);
@@ -46,19 +49,22 @@ public class Timer : MonoBehaviour {
 
     private void FireEventAt(int hour, int minute)
     {
-        Dictionary<int, List<Action<int, int>>> minuteTable;
-        if (eventTable.TryGetValue(hour, out minuteTable))
+        if (clockIsRunning)
         {
-            List<Action<int, int>> events;
-            if (minuteTable.TryGetValue(minute, out events))
+            Dictionary<int, List<Action<int, int>>> minuteTable;
+            if (eventTable.TryGetValue(hour, out minuteTable))
             {
-                if (events.Count > 0)
+                List<Action<int, int>> events;
+                if (minuteTable.TryGetValue(minute, out events))
                 {
-                    foreach (var cb in events)
+                    if (events.Count > 0)
                     {
-                        cb.Invoke(hour, minute);
-                    }
+                        foreach (var cb in events)
+                        {
+                            cb.Invoke(hour, minute);
+                        }
 
+                    }
                 }
             }
         }

@@ -46,4 +46,26 @@ public class SceneManager : MonoBehaviour {
         var writer = textBox.GetComponentInChildren<Writer>();
         writer.CloseTextBox();
     }
+
+    public static bool UnlockSceneObject(string id)
+    {
+        var split = id.Split('-');
+        GameObject go = GameObject.Find(split[0]);
+        // scene object is in this scene
+        if (go != null)
+        {
+            int identifier = 0;
+            int.TryParse(split[1], out identifier);
+            var sceneObjects = go.GetComponents<SceneObject>();
+            foreach (SceneObject so in sceneObjects)
+            {
+
+                if (so.ID == identifier) { 
+                    so.Unlock();
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

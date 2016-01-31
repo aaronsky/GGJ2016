@@ -8,7 +8,7 @@ public class Area : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-       
+        StateManager.RestoreState();
 	}
 
     public void Init(string backgroundImage)
