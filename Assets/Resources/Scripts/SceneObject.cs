@@ -9,6 +9,7 @@ public class SceneObject : MonoBehaviour {
     public List<string> unlocks;
     public int ID;
 	public bool increaseRadius;
+	public bool isEnding;
 
     public bool startsActive;
 
@@ -88,6 +89,10 @@ public class SceneObject : MonoBehaviour {
             }
             else
             {
+				if(isEnding){
+					StateManager.hasBedEnd = true;
+					SceneManager.GenerateTextBox("The bed looks so comfy. A quick nap would probably be fine…");
+				}
 				if(increaseRadius) {
 					StateManager.radius += 5;
 					increaseRadius = false;

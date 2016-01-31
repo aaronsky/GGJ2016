@@ -741,6 +741,8 @@ MonoBehaviour:
   text: "The bed looks so comfy. A quick nap would probably be fine\u2026"
   unlocks: []
   ID: 3
+  increaseRadius: 0
+  isEnding: 1
   startsActive: 0
 --- !u!114 &527594452
 MonoBehaviour:
@@ -757,6 +759,8 @@ MonoBehaviour:
   unlocks:
   - Bed-3
   ID: 2
+  increaseRadius: 0
+  isEnding: 0
   startsActive: 0
 --- !u!1 &753548871
 GameObject:
@@ -890,6 +894,10 @@ Prefab:
       propertyPath: unlocks.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 462412, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
       propertyPath: m_LocalPosition.x
       value: .75
@@ -960,6 +968,46 @@ Prefab:
       propertyPath: startsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: -.287464559
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: -.8627249
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: .370844662
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: -.848292649
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: .299881667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: -.0868543237
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -.265039027
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: -.237338707
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
+      value: .317556471
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
+      value: .0689711794
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
   m_IsPrefabParent: 0
@@ -981,6 +1029,8 @@ MonoBehaviour:
   text: "You\u2019ve called everyone in your address book."
   unlocks: []
   ID: 4
+  increaseRadius: 0
+  isEnding: 0
   startsActive: 0
 --- !u!114 &940362048
 MonoBehaviour:
@@ -998,6 +1048,8 @@ MonoBehaviour:
   unlocks:
   - Phone-4
   ID: 3
+  increaseRadius: 0
+  isEnding: 0
   startsActive: 0
 --- !u!114 &940362049
 MonoBehaviour:
@@ -1015,6 +1067,8 @@ MonoBehaviour:
   unlocks:
   - Phone-3
   ID: 2
+  increaseRadius: 0
+  isEnding: 0
   startsActive: 0
 --- !u!1 &1196636435
 GameObject:
@@ -1623,4 +1677,6 @@ MonoBehaviour:
   text: Windows are both uplifting and dangerous.
   unlocks: []
   ID: 2
+  increaseRadius: 0
+  isEnding: 0
   startsActive: 0

@@ -22,6 +22,9 @@ public class Apartment : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (StateManager.hasBedEnd && !StateManager.textOnScreen) {
+			StateManager.End (2);
+		}
         if ((!player.hasBrokenOut || destination == 10) && !player.sitting && !StateManager.textOnScreen)
         {
             var xpos = player.transform.position.x;
