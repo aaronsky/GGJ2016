@@ -28,7 +28,7 @@ public class Writer : MonoBehaviour {
 
 	public void SetText (string s) {
         StateManager.textOnScreen = true;
-        
+        Timer.clockIsRunning = false;
 
 		string temp = "";
 
@@ -74,6 +74,6 @@ public class Writer : MonoBehaviour {
 		foreach (Renderer r in renderers)
 			r.enabled = false;
         StateManager.textOnScreen = false;
-       
+        Timer.clockIsRunning = true;
     }
 }

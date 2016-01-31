@@ -8,14 +8,13 @@ public class SceneObject : MonoBehaviour {
     public string text;
     public List<string> unlocks;
     public int ID;
-	public GameObject textBox;
 
     public bool startsActive;
 
     void Awake()
     {
         var width = transform.localScale.x / GetComponent<SpriteRenderer>().sprite.bounds.size.x;
-        maxDistToPlayer = width / 2 + 0.3f;
+        maxDistToPlayer = width / 2 + 1;
     }
 
     // Use this for initialization
@@ -27,7 +26,7 @@ public class SceneObject : MonoBehaviour {
             {
                 if (!startsActive)
                 {
-                    gameObject.GetComponent<Renderer>().enabled = false;
+                    //gameObject.GetComponent<Renderer>().enabled = false;
                     enabled = false;
                 }
             }
@@ -78,17 +77,18 @@ public class SceneObject : MonoBehaviour {
     {
         if (!enabled || StateManager.textOnScreen)
             return;
-		SceneManager.GenerateTextBox ("010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111");
 		//GenerateTextBox ("");
         var player = GameObject.Find("Character");
         if (player != null)
         {
-            if (Vector3.Distance(transform.position, player.transform.position) > maxDistToPlayer)
+            if (Mathf.Abs(transform.position.x - player.transform.position.x) > maxDistToPlayer)
             {
                 //too far
             }
             else
             {
+                SceneManager.GenerateTextBox(text);
+                player.GetComponent<Character>().hasBrokenOut = true;
                 var controller = player.GetComponent<Character>();
                 if (controller != null)
                 {
@@ -97,18 +97,11 @@ public class SceneObject : MonoBehaviour {
                 }
                 foreach (string unlock in unlocks)
                 {
-                    var split = unlock.Split('-');
-                    GameObject go = GameObject.Find(split[0]);
-                    if (go != null)
+                    var tryUnlock = SceneManager.UnlockSceneObject(unlock);
+                    //scene object may be in another scene, store for later checking
+                    if (!tryUnlock)
                     {
-                        var sceneObjects = go.GetComponents<SceneObject>();
-                        foreach (SceneObject so in sceneObjects)
-                        {
-                            int identifier = 0;
-                            int.TryParse(split[1], out identifier);
-                            if (so.ID == identifier)
-                                so.Unlock();
-                        }
+                        StateManager.queuedUnlocks.Add(unlock);
                     }
                 }
             }
