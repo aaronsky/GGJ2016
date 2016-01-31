@@ -25,6 +25,7 @@ public class CharacterLight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		level = StateManager.radius;
         UpdateLight();
 	}
 

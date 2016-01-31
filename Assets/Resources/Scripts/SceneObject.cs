@@ -8,6 +8,7 @@ public class SceneObject : MonoBehaviour {
     public string text;
     public List<string> unlocks;
     public int ID;
+	public bool increaseRadius;
 
     public bool startsActive;
 
@@ -53,7 +54,7 @@ public class SceneObject : MonoBehaviour {
             bool blockUnlock = false;
             foreach (var so in sceneObjects)
             {
-                if (so.GetComponent<Renderer>().enabled && so.ID > ID)
+                if (so.enabled && so.ID > ID)
                     blockUnlock = true;
 
             }
@@ -62,7 +63,7 @@ public class SceneObject : MonoBehaviour {
                 foreach (var so in sceneObjects)
                 {
                     if (so.GetComponent<Renderer>().enabled && so.ID < ID)
-                        so.GetComponent<Renderer>().enabled = false;
+                        so.enabled = false;
                 }
                 enabled = true;
                 if (!gameObject.GetComponent<Renderer>().enabled)
@@ -87,6 +88,10 @@ public class SceneObject : MonoBehaviour {
             }
             else
             {
+				if(increaseRadius) {
+					StateManager.radius += 5;
+					increaseRadius = false;
+				}
                 SceneManager.GenerateTextBox(text);
                 player.GetComponent<Character>().hasBrokenOut = true;
                 var controller = player.GetComponent<Character>();
