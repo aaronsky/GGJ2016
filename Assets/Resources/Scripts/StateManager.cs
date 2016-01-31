@@ -9,6 +9,7 @@ public class StateManager : MonoBehaviour {
     public static int SubwayDirection;
     public static bool textOnScreen = false;
     public static List<string> queuedUnlocks = new List<string>();
+	public static int radius = 13;
 
 	// Use this for initialization
 	void Start () {

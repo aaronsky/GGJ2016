@@ -110,12 +110,12 @@ public class Character : MonoBehaviour {
         {
             cleanButtonSeparation = true;
         }
-        else if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && cleanButtonSeparation && inputEnabled)
+        else if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && cleanButtonSeparation && inputEnabled && !StateManager.textOnScreen)
         {
             hasBrokenOut = true;
             MoveRight();
         }
-        else if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && cleanButtonSeparation && inputEnabled)
+		else if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && cleanButtonSeparation && inputEnabled && !StateManager.textOnScreen)
         {
             hasBrokenOut = true;
             MoveLeft();

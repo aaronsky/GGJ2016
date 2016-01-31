@@ -61,6 +61,7 @@ public class Apartment : MonoBehaviour {
         {
             destination = 10;
             player.Stand();
+			SceneManager.GenerateTextBox("Time to go to work.");
         }
     }
 
@@ -69,5 +70,6 @@ public class Apartment : MonoBehaviour {
         player.Stand();
         player.inputEnabled = false;
         destination = 10;
+		SceneManager.GenerateTextBox("Oh no, you’re gonna be late!");
     }
 }
