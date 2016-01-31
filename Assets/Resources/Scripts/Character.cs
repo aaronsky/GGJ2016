@@ -11,6 +11,8 @@ public class Character : MonoBehaviour {
     bool blinking = false;
     bool facingBack = false;
 
+    public bool hasBrokenOut = false;
+
     // Use this for initialization
     void Start() {
         animator = GetComponent<Animator>();
@@ -21,7 +23,7 @@ public class Character : MonoBehaviour {
         spriteRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, frameSize.x, frameSize.y), new Vector2(0.5f, 0));
     }
 
-    void MoveLeft()
+    public void MoveLeft()
     {
         TurnAround(false);
         gameObject.transform.Translate(-5 * Time.deltaTime, 0, 0);
@@ -39,7 +41,7 @@ public class Character : MonoBehaviour {
         }
     }
 
-    void MoveRight()
+    public void MoveRight()
     {
         TurnAround(false);
         gameObject.transform.Translate(5 * Time.deltaTime, 0, 0);
@@ -67,10 +69,12 @@ public class Character : MonoBehaviour {
 	void Update () {
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
+            hasBrokenOut = true;
             MoveRight();
         }
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
+            hasBrokenOut = true;
             MoveLeft();
         }
         else
