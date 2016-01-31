@@ -104,7 +104,7 @@ public class Subway : MonoBehaviour {
                 {
                     ExitSubway();
                 }
-                if (ticksToNextStop == 0)
+                if (ticksToNextStop <= 0)
                 {
                     stopped = false;
                     SceneManager.HideText();

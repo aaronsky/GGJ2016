@@ -34,6 +34,10 @@ public class StateManager : MonoBehaviour {
     public static void Late()
     {
         StateManager.tardies++;
+        if (StateManager.tardies >= 3)
+        {
+            StateManager.isLate = true;
+        }
     }
 	
 	// Update is called once per frame
