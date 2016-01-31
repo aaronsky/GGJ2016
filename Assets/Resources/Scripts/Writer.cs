@@ -9,9 +9,6 @@ public class Writer : MonoBehaviour {
 	public TextMesh content;
 	Queue<string> displays = new Queue<string>();
 
-    private float levelTickInterval;
-    private float textTickInterval = 0.1f;
-
 	// Use this for initialization
 	void Start () {
 		//displayText = "42";
@@ -19,7 +16,6 @@ public class Writer : MonoBehaviour {
 		content = GetComponent<TextMesh>();
 		content.text = displayText;
         GetComponent<Renderer>().sortingOrder = 7;
-        levelTickInterval = textTickInterval;
 	}
 	
 	// Update is called once per frame

@@ -11,6 +11,13 @@ public class StateManager : MonoBehaviour {
     public static List<string> queuedUnlocks = new List<string>();
 	public static int radius = 13;
 
+    public static List<bool> unlockedEndings = new List<bool>()
+    {
+        false,
+        false,
+        false
+    };
+
 	// Use this for initialization
 	void Start () {
 	    
@@ -102,5 +109,15 @@ public class StateManager : MonoBehaviour {
             cleanLevels.Add(Application.loadedLevelName);
         }
         Debug.Log("Saved state.");
+    }
+
+    public static void End(int i)
+    {
+        unlockedEndings[i] = true;
+        activeList = new Dictionary<string, Dictionary<string, bool>>();
+        cleanLevels = new List<string>();
+        queuedUnlocks = new List<string>();
+        
+        Application.LoadLevel("Endings");
     }
 }

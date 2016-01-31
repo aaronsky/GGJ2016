@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour {
     public int hours = 7;
     public int minutes = 30;
     public float tickInterval = 0.5f;
-    private static Dictionary<int, Dictionary<int, List<Action<int, int>>>> eventTable = new Dictionary<int, Dictionary<int, List<Action<int, int>>>>();
+    public static Dictionary<int, Dictionary<int, List<Action<int, int>>>> eventTable = new Dictionary<int, Dictionary<int, List<Action<int, int>>>>();
     public static bool clockIsRunning = true;
 
     void Awake()
@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour {
         eventTable = new Dictionary<int, Dictionary<int, List<Action<int, int>>>>();
         eventTable.Add(-1, new Dictionary<int, List<Action<int, int>>>());
         eventTable[-1].Add(-1, new List<Action<int, int>>());
+        clockIsRunning = true;
     }
 
     // Use this for initialization
