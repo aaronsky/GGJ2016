@@ -8,7 +8,8 @@ public class Office : MonoBehaviour {
     private float chairPosition;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         Timer.Subscribe(Leave, 17, 0);
         var go = GameObject.Find("Character");
         player = go.GetComponent<Character>();
@@ -50,6 +51,7 @@ public class Office : MonoBehaviour {
         {
             StateManager.SubwayDirection = -1;
             StateManager.SaveState();
+            Timer.Reset();
             Application.LoadLevel("Second");
         }
     }

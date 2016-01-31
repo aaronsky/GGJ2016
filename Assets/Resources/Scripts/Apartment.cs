@@ -51,6 +51,7 @@ public class Apartment : MonoBehaviour {
         if (player.transform.position.x == 10)
         {
             StateManager.SaveState();
+            Timer.Reset();
             Application.LoadLevel("Second");
         }
     }
