@@ -9,54 +9,73 @@ public class Character : MonoBehaviour {
     public bool FacingRight = false;
     bool walking = false;
     bool blinking = false;
+    bool facingBack = false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
         animator = GetComponent<Animator>();
         var spriteRenderer = GetComponent<SpriteRenderer>();
         Texture2D tex = (Texture2D)Resources.Load<Texture2D>("player");
         frameSize.x = tex.width / 2;
         frameSize.y = tex.height / 4;
         spriteRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, frameSize.x, frameSize.y), new Vector2(0.5f, 0));
-	}
-	
+    }
+
+    void MoveLeft()
+    {
+        TurnAround(false);
+        gameObject.transform.Translate(-5 * Time.deltaTime, 0, 0);
+        if (!walking)
+        {
+            walking = true;
+            animator.SetBool("Walking", true);
+        }
+        if (FacingRight)
+        {
+            FacingRight = false;
+            var scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+        }
+    }
+
+    void MoveRight()
+    {
+        TurnAround(false);
+        gameObject.transform.Translate(5 * Time.deltaTime, 0, 0);
+        if (!walking)
+        {
+            walking = true;
+            animator.SetBool("Walking", true);
+        }
+        if (!FacingRight)
+        {
+            FacingRight = true;
+            var scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+        }
+    }
+
+    public void TurnAround(bool? value = null)
+    {
+        facingBack = value ?? !facingBack;
+        animator.SetBool("FacingBack", facingBack);
+    }
+
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            gameObject.transform.Translate(5 * Time.deltaTime, 0, 0);
-            if (walking == false)
-            {
-                walking = true;
-                animator.SetBool("Walking", true);
-            }
-            if (!FacingRight)
-            {
-                FacingRight = true;
-                var scale = transform.localScale;
-                scale.x *= -1;
-                transform.localScale = scale;
-            }
+            MoveRight();
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            gameObject.transform.Translate(-5 * Time.deltaTime, 0, 0);
-            if (walking == false)
-            {
-                walking = true;
-                animator.SetBool("Walking", true);
-            }
-            if (FacingRight)
-            {
-                FacingRight = false;
-                var scale = transform.localScale;
-                scale.x *= -1;
-                transform.localScale = scale;
-            }
+            MoveLeft();
         }
         else
         {
-            if (walking == true)
+            if (walking)
             {
                 walking = false;
                 animator.SetBool("Walking", false);

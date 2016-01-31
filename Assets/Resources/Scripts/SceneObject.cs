@@ -3,13 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SceneObject : MonoBehaviour {
-
-    public static float maxDistToPlayer = 0;
+    public static float maxDistToPlayer;
     public string text;
     public List<string> unlocks;
     public int ID;
 
     public bool startsActive;
+
+    void Awake()
+    {
+        var width = transform.localScale.x / GetComponent<SpriteRenderer>().sprite.bounds.size.x;
+        maxDistToPlayer = width / 2 + 0.3f;
+    }
 
     // Use this for initialization
     void Start()
@@ -68,26 +73,35 @@ public class SceneObject : MonoBehaviour {
     {
         if (!enabled)
             return;
-        Debug.Log(text);
         var player = GameObject.Find("Character");
-        if (Vector3.Distance(transform.position, player.transform.position) > maxDistToPlayer)
+        if (player != null)
         {
-            //too far
-        }
-        else {
-            foreach (string unlock in unlocks)
+            if (Vector3.Distance(transform.position, player.transform.position) > maxDistToPlayer)
             {
-                var split = unlock.Split('-');
-                GameObject go = GameObject.Find(split[0]);
-                if (go != null)
+                //too far
+            }
+            else
+            {
+                var controller = player.GetComponent<Character>();
+                if (controller != null)
                 {
-                    var sceneObjects = go.GetComponents<SceneObject>();
-                    foreach (SceneObject so in sceneObjects)
+                    controller.TurnAround(true);
+                    Debug.Log(text);
+                }
+                foreach (string unlock in unlocks)
+                {
+                    var split = unlock.Split('-');
+                    GameObject go = GameObject.Find(split[0]);
+                    if (go != null)
                     {
-                        int identifier = 0;
-                        int.TryParse(split[1], out identifier);
-                        if (so.ID == identifier)
-                            so.Unlock();
+                        var sceneObjects = go.GetComponents<SceneObject>();
+                        foreach (SceneObject so in sceneObjects)
+                        {
+                            int identifier = 0;
+                            int.TryParse(split[1], out identifier);
+                            if (so.ID == identifier)
+                                so.Unlock();
+                        }
                     }
                 }
             }
