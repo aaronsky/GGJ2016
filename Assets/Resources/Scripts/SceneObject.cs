@@ -13,16 +13,19 @@ public class SceneObject : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        if (ID == 1)
+        if (!StateManager.cleanLevels.Contains(Application.loadedLevelName))
         {
-            if (!startsActive)
+            if (ID == 1)
             {
-                gameObject.GetComponent<Renderer>().enabled = false;
-                enabled = false;
+                if (!startsActive)
+                {
+                    gameObject.GetComponent<Renderer>().enabled = false;
+                    enabled = false;
+                }
             }
+            else
+                enabled = false;
         }
-        else
-            enabled = false;
         
     }
 

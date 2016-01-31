@@ -10,13 +10,14 @@ public class SceneManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            StateManager.RestoreState();
+            StateManager.SaveState();
         }
         else if (Input.GetKeyDown(KeyCode.L))
         {
-            StateManager.SaveState();
+            Application.LoadLevel("Main");
+            StateManager.RestoreState();
         }
 	}
 }

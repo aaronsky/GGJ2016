@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class StateManager : MonoBehaviour {
 
     public static Dictionary<string, Dictionary<string, bool>> activeList;
+    public static List<string> cleanLevels = new List<string>();
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +46,7 @@ public class StateManager : MonoBehaviour {
                 }
             }
         }
+        Debug.Log("Restored state.");
     }
 
     /// <summary>
@@ -76,5 +78,10 @@ public class StateManager : MonoBehaviour {
                 activeList.Add(so.gameObject.name, data);
             }
         }
+        if (!cleanLevels.Contains(Application.loadedLevelName))
+        {
+            cleanLevels.Add(Application.loadedLevelName);
+        }
+        Debug.Log("Saved state.");
     }
 }

@@ -30,12 +30,22 @@ public class CharacterLight : MonoBehaviour {
 
     private void UpdateLight()
     {
-        spotLight.spotAngle = smallAngle + (bigAngle - smallAngle) * level / 100;
-        spotLight.range = smallRange + (bigRange - smallRange) * level / 100;
+        if (level < 90)
+        {
+            spotLight.type = LightType.Spot;
+            spotLight.spotAngle = smallAngle + (bigAngle - smallAngle) * level / 100;
+            spotLight.range = smallRange + (bigRange - smallRange) * level / 100;
 
-        var pos = transform.position;
-        pos.z = smallZ + (bigZ - smallZ) * level / 100;
-        transform.position = pos;
+            var pos = transform.position;
+            pos.z = smallZ + (bigZ - smallZ) * level / 100;
+            transform.position = pos;
+            spotLight.intensity = 8;
+        }
+        else
+        {
+            spotLight.type = LightType.Directional;
+            spotLight.intensity = 1;
+        }
     }
 
     public void IncreaseLevel(int amount)
