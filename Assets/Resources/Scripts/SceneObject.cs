@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SceneObject : MonoBehaviour {
-    
+
+    public static float maxDistToPlayer = 0;
     public string text;
     public List<string> unlocks;
     public int ID;
@@ -68,19 +69,26 @@ public class SceneObject : MonoBehaviour {
         if (!enabled)
             return;
         Debug.Log(text);
-        foreach (string unlock in unlocks)
+        var player = GameObject.Find("Character");
+        if (Vector3.Distance(transform.position, player.transform.position) > maxDistToPlayer)
         {
-            var split = unlock.Split('-');
-            GameObject go = GameObject.Find(split[0]);
-            if (go != null)
+            //too far
+        }
+        else {
+            foreach (string unlock in unlocks)
             {
-                var sceneObjects = go.GetComponents<SceneObject>();
-                foreach (SceneObject so in sceneObjects)
+                var split = unlock.Split('-');
+                GameObject go = GameObject.Find(split[0]);
+                if (go != null)
                 {
-                    int identifier = 0;
-                    int.TryParse(split[1], out identifier);
-                    if (so.ID == identifier)
-                        so.Unlock();
+                    var sceneObjects = go.GetComponents<SceneObject>();
+                    foreach (SceneObject so in sceneObjects)
+                    {
+                        int identifier = 0;
+                        int.TryParse(split[1], out identifier);
+                        if (so.ID == identifier)
+                            so.Unlock();
+                    }
                 }
             }
         }
