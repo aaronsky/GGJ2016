@@ -8,12 +8,30 @@ public class Subway : MonoBehaviour {
     private int ticksToNextStop;
     private int ticksPassed;
 
-    public List<string> stops;
+    private List<string> stops = new List<string>()
+    {
+        "Main Street",
+        "South Street",
+        "Park Street"
+    };
+    private List<string> stopText = new List<string>()
+    {
+        "You get off at Main Street Station. You see a young woman taking six dogs for a walk. You pet at least one dog. You walk the rest of the way to the office.",
+        "You get off at South Street Station. You see a flower shop with an extensive selection of carnations. You buy a carnation, and the shopkeeper assures you it’s a good one. You walk the rest of the way to the office.",
+        "You get off at Park Street Station. Coincidentally, there’s a large park here. The sun is shining, the wind is perfect, ducks are in ponds, and children are playing in the grass. You take a pleasant walk to work."
+    };
+    public static List<bool> haveGottenOff = new List<bool>()
+    {
+        false,
+        false,
+        false
+    };
     public List<int> ticks;
     private int currentStop;
 
     private int direction;
     private bool stopped = false;
+    private bool gotOffSomewhere = false;
 
 	// Use this for initialization
 	void Start () {
@@ -33,11 +51,28 @@ public class Subway : MonoBehaviour {
             currentStop = stops.Count;
         }
         Timer.Subscribe(SubwayStop);
+        gotOffSomewhere = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if (gotOffSomewhere && !StateManager.textOnScreen)
+        {
+            if (!Subway.haveGottenOff[currentStop])
+            {
+                Subway.haveGottenOff[currentStop] = true;
+                player.IncreaseView();
+            }
+            StateManager.SaveState();
+            if (direction > 0)
+            {
+                Application.LoadLevel("Third");
+            }
+            else
+            {
+                Application.LoadLevel("Main");
+            }
+        }
 	}
 
     public void SubwayStop(int hour, int minute)
@@ -61,12 +96,19 @@ public class Subway : MonoBehaviour {
         }
         else
         {
-            ticksToNextStop--;
-            if (ticksToNextStop == 0)
+            if (!gotOffSomewhere)
             {
-                stopped = false;
-                SceneManager.HideText();
-                ticksToNextStop = ticks[currentStop + 1];
+                ticksToNextStop--;
+                if (player.transform.position.x >= 10)
+                {
+                    ExitSubway();
+                }
+                if (ticksToNextStop == 0)
+                {
+                    stopped = false;
+                    SceneManager.HideText();
+                    ticksToNextStop = 7;
+                }
             }
         }
     }
@@ -94,7 +136,9 @@ public class Subway : MonoBehaviour {
         //getting off at stop
         else
         {
-            Debug.Log(stops[currentStop]);
+            SceneManager.GenerateTextBox(stopText[currentStop]);
+            GameObject.Find("Spotlight").GetComponent<Light>().intensity = 0;
+            gotOffSomewhere = true;
         }
     }
 }

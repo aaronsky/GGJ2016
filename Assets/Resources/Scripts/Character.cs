@@ -159,4 +159,11 @@ public class Character : MonoBehaviour {
         spotLight.transform.position = pos;
         firstFrame = false;
     }
+
+    public void IncreaseView()
+    {
+        Debug.Log("increased view");
+    }
 }
+
+
