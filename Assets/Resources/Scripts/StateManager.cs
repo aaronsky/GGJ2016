@@ -9,6 +9,9 @@ public class StateManager : MonoBehaviour {
     public static int SubwayDirection;
     public static bool textOnScreen = false;
     public static List<string> queuedUnlocks = new List<string>();
+	public static int radius = 13;
+	
+	public static bool hasBedEnd = false;
 
     public static bool hasCalledGrandma = false;
     public static bool grandmaEnding = false;
@@ -35,14 +38,7 @@ public class StateManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (grandmaEnding && !StateManager.textOnScreen)
-        {
-            StateManager.End(1);
-        }
-        if (isLate && !StateManager.textOnScreen)
-        {
-            StateManager.End(0);
-        }
+        
 	}
 
     /// <summary>
@@ -139,7 +135,17 @@ public class StateManager : MonoBehaviour {
         activeList = new Dictionary<string, Dictionary<string, bool>>();
         cleanLevels = new List<string>();
         queuedUnlocks = new List<string>();
-        
+
+        StateManager.radius = 13;
+
+        StateManager.hasBedEnd = false;
+
+        StateManager.hasCalledGrandma = false;
+        StateManager.grandmaEnding = false;
+
+        StateManager.tardies = 0;
+        StateManager.isLate = false;
+
         Application.LoadLevel("Endings");
     }
 }

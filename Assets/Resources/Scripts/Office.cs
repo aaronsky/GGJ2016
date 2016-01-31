@@ -8,7 +8,8 @@ public class Office : MonoBehaviour {
     private float chairPosition;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         Timer.Subscribe(Leave, 17, 0);
         var go = GameObject.Find("Character");
         player = go.GetComponent<Character>();
@@ -31,6 +32,10 @@ public class Office : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (StateManager.isLate && !StateManager.textOnScreen)
+        {
+            StateManager.End(1);
+        }
         if (!player.hasBrokenOut && !player.sitting || !player.inputEnabled)
         {
             var xpos = player.transform.position.x;
@@ -63,6 +68,7 @@ public class Office : MonoBehaviour {
         {
             StateManager.SubwayDirection = -1;
             StateManager.SaveState();
+            Timer.Reset();
             Application.LoadLevel("Second");
         }
     }

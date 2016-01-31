@@ -22,6 +22,13 @@ public class Apartment : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (StateManager.grandmaEnding && !StateManager.textOnScreen)
+        {
+            StateManager.End(0);
+        }
+        if (StateManager.hasBedEnd && !StateManager.textOnScreen) {
+			StateManager.End (2);
+		}
         if ((!player.hasBrokenOut || destination == 10) && !player.sitting && !StateManager.textOnScreen)
         {
             var xpos = player.transform.position.x;
@@ -51,6 +58,7 @@ public class Apartment : MonoBehaviour {
         if (player.transform.position.x == 10)
         {
             StateManager.SaveState();
+            Timer.Reset();
             Application.LoadLevel("Second");
         }
     }
@@ -61,6 +69,7 @@ public class Apartment : MonoBehaviour {
         {
             destination = 10;
             player.Stand();
+			SceneManager.GenerateTextBox("Time to go to work.");
         }
     }
 
@@ -69,5 +78,7 @@ public class Apartment : MonoBehaviour {
         player.Stand();
         player.inputEnabled = false;
         destination = 10;
+		SceneManager.GenerateTextBox("Oh no, you’re gonna be late!(+1 Late)");
+        StateManager.Late();
     }
 }
