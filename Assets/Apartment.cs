@@ -21,7 +21,7 @@ public class Apartment : MonoBehaviour {
         if (!player.hasBrokenOut || destination == 10)
         {
             var xpos = player.transform.position.x;
-            var move = 5 * Time.deltaTime;
+            var move = player.moveSpeed * Time.deltaTime;
             //player is within move distance of destination
             if (Mathf.Abs(xpos - destination) < move)
             {

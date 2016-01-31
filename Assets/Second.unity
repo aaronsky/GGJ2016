@@ -226,7 +226,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3e002adf4c39fb4479feb23181943d10, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13010206d0b02d246a1d27020ec675c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1713410410
 Transform:
@@ -309,14 +309,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1861696411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3acabfeb24a2fd646a0fb9c7af8ebb66, type: 3}
+  m_Script: {fileID: 11500000, guid: c0a5ef7e48227c4468d1ef098c1d27d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 10
-  smallZ: -4
-  bigZ: -10
-  smallRange: 15
-  bigRange: 30
+  level: 13
+  smallZ: -5
+  bigZ: -21
+  smallRange: 10
+  bigRange: 41
   smallAngle: 30
   bigAngle: 144
 --- !u!1001 &2125411826

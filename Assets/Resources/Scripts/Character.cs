@@ -11,6 +11,8 @@ public class Character : MonoBehaviour {
     bool blinking = false;
     bool facingBack = false;
 
+    public float moveSpeed = 3;
+
     public bool hasBrokenOut = false;
 
     // Use this for initialization
@@ -26,7 +28,7 @@ public class Character : MonoBehaviour {
     public void MoveLeft()
     {
         TurnAround(false);
-        gameObject.transform.Translate(-5 * Time.deltaTime, 0, 0);
+        gameObject.transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
         if (!walking)
         {
             walking = true;
@@ -44,7 +46,7 @@ public class Character : MonoBehaviour {
     public void MoveRight()
     {
         TurnAround(false);
-        gameObject.transform.Translate(5 * Time.deltaTime, 0, 0);
+        gameObject.transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
         if (!walking)
         {
             walking = true;
@@ -104,11 +106,11 @@ public class Character : MonoBehaviour {
         var playerX = gameObject.transform.position.x;
         if (spotX > playerX + 1)
         {
-            spotLight.transform.Translate(-5 * Time.deltaTime, 0, 0);
+            spotLight.transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
         }
         else if (spotX < playerX - 1)
         {
-            spotLight.transform.Translate(5 * Time.deltaTime, 0, 0);
+            spotLight.transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
         }
     }
 }
