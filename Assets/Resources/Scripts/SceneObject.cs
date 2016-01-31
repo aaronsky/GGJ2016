@@ -10,6 +10,9 @@ public class SceneObject : MonoBehaviour {
     public int ID;
 
     public bool startsActive;
+    public bool isEnding;
+    public bool isLate;
+    public bool isGrandma;
 
     void Awake()
     {
@@ -87,6 +90,14 @@ public class SceneObject : MonoBehaviour {
             }
             else
             {
+                if (isGrandma)
+                {
+                    StateManager.hasCalledGrandma = true;
+                }
+                if (isLate)
+                {
+                    StateManager.Late();
+                }
                 SceneManager.GenerateTextBox(text);
                 player.GetComponent<Character>().hasBrokenOut = true;
                 var controller = player.GetComponent<Character>();

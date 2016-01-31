@@ -14,6 +14,19 @@ public class Office : MonoBehaviour {
         player = go.GetComponent<Character>();
         chairPosition = GameObject.Find("ChairArm").transform.position.x;
         destination = chairPosition;
+        if (StateManager.tardies == 1)
+        {
+            SceneManager.GenerateTextBox("Your boss reprimanded you for tardiness, but you weren’t that late.(+1 Late)");
+        }
+        else if (StateManager.tardies == 2)
+        {
+            SceneManager.GenerateTextBox("Your boss reprimanded you for tardiness, and said this is your last warning.(+1 Late)");
+        }
+        else if (StateManager.tardies == 3)
+        {
+            StateManager.isLate = true;
+            SceneManager.GenerateTextBox("Your boss reprimanded you for tardiness, and said this was the last straw. ");
+        }
 	}
 	
 	// Update is called once per frame

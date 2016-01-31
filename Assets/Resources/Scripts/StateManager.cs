@@ -10,6 +10,12 @@ public class StateManager : MonoBehaviour {
     public static bool textOnScreen = false;
     public static List<string> queuedUnlocks = new List<string>();
 
+    public static bool hasCalledGrandma = false;
+    public static bool grandmaEnding = false;
+
+    public static int tardies = 0;
+    public static bool isLate = false;
+
     public static List<bool> unlockedEndings = new List<bool>()
     {
         false,
@@ -21,10 +27,22 @@ public class StateManager : MonoBehaviour {
 	void Start () {
 	    
 	}
+
+    public static void Late()
+    {
+        StateManager.tardies++;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if (grandmaEnding && !StateManager.textOnScreen)
+        {
+            StateManager.End(1);
+        }
+        if (isLate && !StateManager.textOnScreen)
+        {
+            StateManager.End(0);
+        }
 	}
 
     /// <summary>
@@ -32,6 +50,11 @@ public class StateManager : MonoBehaviour {
     /// </summary>
     public static void RestoreState()
     {
+        if (GameObject.Find("Apartment") != null && StateManager.hasCalledGrandma)
+        {
+            grandmaEnding = true;
+            SceneManager.GenerateTextBox("The phone rings. Your grandmother left you a voicemail. 'It was very nice to hear your voice yesterday. Have a wonderful day and I love you very much.'");
+        }
         foreach (string key in activeList.Keys)
         {
             var go = GameObject.Find(key);
