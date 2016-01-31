@@ -3,8 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class EndingSetupComponent : MonoBehaviour {
-
-    public bool[] endingStates = new bool[3];
+    
     public Sprite[] endingSprites = new Sprite[3];
     public string[] endingLines = new string[3];
     public Image[] endingImages = new Image[3];
@@ -12,9 +11,9 @@ public class EndingSetupComponent : MonoBehaviour {
 
     void Awake()
     {
-        for (int index = 0; index < endingStates.Length; index++)
+        for (int index = 0; index < StateManager.unlockedEndings.Count; index++)
         {
-            if (endingStates[index])
+            if (StateManager.unlockedEndings[index])
             {
                 endingImages[index].sprite = endingSprites[index];
                 endingTexts[index].text = endingLines[index];

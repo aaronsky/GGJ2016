@@ -8,22 +8,26 @@ public class Timer : MonoBehaviour {
     public int hours = 7;
     public int minutes = 30;
     public float tickInterval = 0.5f;
-    public static Dictionary<int, Dictionary<int, List<Action<int, int>>>> eventTable = new Dictionary<int, Dictionary<int, List<Action<int, int>>>>();
+    public static Dictionary<int, Dictionary<int, List<Action<int, int>>>> eventTable;
     public static bool clockIsRunning = true;
 
-    void Awake()
-    {
-        eventTable = new Dictionary<int, Dictionary<int, List<Action<int, int>>>>();
-        eventTable.Add(-1, new Dictionary<int, List<Action<int, int>>>());
-        eventTable[-1].Add(-1, new List<Action<int, int>>());
-        clockIsRunning = true;
+    static Timer() {
+        Reset();
     }
-
+    
     // Use this for initialization
     void Start ()
     {
         FireEventAt(hours, minutes);
         StartCoroutine("Tick");
+    }
+
+    public static void Reset()
+    {
+        eventTable = new Dictionary<int, Dictionary<int, List<Action<int, int>>>>();
+        eventTable.Add(-1, new Dictionary<int, List<Action<int, int>>>());
+        eventTable[-1].Add(-1, new List<Action<int, int>>());
+        clockIsRunning = true;
     }
 
     private IEnumerator Tick()
@@ -68,13 +72,20 @@ public class Timer : MonoBehaviour {
                     }
                 }
             }
-        }
-        var allTickEvents = eventTable[-1][-1];
-        if (allTickEvents != null && allTickEvents.Count > 0)
-        {
-            foreach (var cb in allTickEvents)
+            if (eventTable.TryGetValue(-1, out minuteTable))
             {
-                cb.Invoke(hour, minute);
+                List<Action<int, int>> events;
+                if (minuteTable.TryGetValue(-1, out events))
+                {
+                    if (events.Count > 0)
+                    {
+                        foreach (var cb in events)
+                        {
+                            cb.Invoke(hour, minute);
+                        }
+
+                    }
+                }
             }
         }
     }
@@ -96,6 +107,10 @@ public class Timer : MonoBehaviour {
     /// <param name="expectedMinute">The expected firing minute</param>
     public static void Subscribe(Action<int, int> cb, int expectedHour, int expectedMinute)
     {
+        if (eventTable == null)
+        {
+            Reset();
+        }
         Dictionary<int, List<Action<int, int>>> minuteTable;
         if (eventTable.TryGetValue(expectedHour, out minuteTable))
         {
@@ -105,12 +120,16 @@ public class Timer : MonoBehaviour {
                 events.Add(cb);
             } else
             {
-                minuteTable.Add(expectedMinute, new List<Action<int, int>>() { cb });
+                minuteTable.Add(expectedMinute, new List<Action<int, int>>());
+                minuteTable[expectedMinute].Add(cb);
             }
         } else
         {
             eventTable.Add(expectedHour, new Dictionary<int, List<Action<int, int>>>());
-            eventTable[expectedHour].Add(expectedMinute, new List<Action<int, int>>() { cb });
+            eventTable[expectedHour].Add(expectedMinute, new List<Action<int, int>>());
+            minuteTable = eventTable[expectedHour];
+            var events = minuteTable[expectedMinute];
+            events.Add(cb);
         }
     }
 }

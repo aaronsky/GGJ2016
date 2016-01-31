@@ -16,7 +16,8 @@ public class Subway : MonoBehaviour {
     private bool stopped = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         var go = GameObject.Find("Character");
         player = go.GetComponent<Character>();
         player.Sit(6, 1);
@@ -83,12 +84,14 @@ public class Subway : MonoBehaviour {
         if (currentStop == -1)
         {
             StateManager.SaveState();
+            Timer.Reset();
             Application.LoadLevel("Main");
         }
         //arrived at office
         else if (currentStop == stops.Count)
         {
             StateManager.SaveState();
+            Timer.Reset();
             Application.LoadLevel("Third");
         }
         //getting off at stop
