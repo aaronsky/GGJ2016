@@ -51,7 +51,7 @@ public class Subway : MonoBehaviour {
                 currentStop+= direction;
                 if (currentStop < stops.Count && currentStop > -1)
                 {
-                    ticksToNextStop = ticks[currentStop + 1];
+                    ticksToNextStop = 5;
                     QueueStop();
                 }
                 else
@@ -62,13 +62,19 @@ public class Subway : MonoBehaviour {
         }
         else
         {
-            stopped = false;
+            ticksToNextStop--;
+            if (ticksToNextStop == 0)
+            {
+                stopped = false;
+                SceneManager.HideText();
+                ticksToNextStop = ticks[currentStop + 1];
+            }
         }
     }
 
     private void QueueStop()
     {
-        Debug.Log(stops[currentStop]);
+        SceneManager.GenerateTextBox(stops[currentStop]);
     }
 
     public void ExitSubway()

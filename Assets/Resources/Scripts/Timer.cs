@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour {
     public float tickInterval = 0.5f;
     private static Dictionary<int, Dictionary<int, List<Action<int, int>>>> eventTable = new Dictionary<int, Dictionary<int, List<Action<int, int>>>>();
 
+
     void Awake()
     {
         eventTable = new Dictionary<int, Dictionary<int, List<Action<int, int>>>>();

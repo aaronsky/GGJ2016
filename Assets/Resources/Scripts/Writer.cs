@@ -68,7 +68,7 @@ public class Writer : MonoBehaviour {
 			CloseTextBox ();
 	}
 
-	void CloseTextBox(){
+	public void CloseTextBox(){
 		Renderer[] renderers = gameObject.GetComponentsInParent<Renderer> ();
 		
 		foreach (Renderer r in renderers)
