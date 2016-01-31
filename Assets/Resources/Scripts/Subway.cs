@@ -51,7 +51,6 @@ public class Subway : MonoBehaviour {
                 currentStop+= direction;
                 if (currentStop < stops.Count && currentStop > -1)
                 {
-                    ticksToNextStop = 5;
                     QueueStop();
                 }
                 else
@@ -75,6 +74,7 @@ public class Subway : MonoBehaviour {
     private void QueueStop()
     {
         SceneManager.GenerateTextBox(stops[currentStop]);
+        ticksToNextStop = 5;
     }
 
     public void ExitSubway()

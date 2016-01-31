@@ -4,10 +4,11 @@ using System.Collections.Generic;
 
 public class StateManager : MonoBehaviour {
 
-    public static Dictionary<string, Dictionary<string, bool>> activeList;
+    public static Dictionary<string, Dictionary<string, bool>> activeList = new Dictionary<string, Dictionary<string, bool>>();
     public static List<string> cleanLevels = new List<string>();
     public static int SubwayDirection;
     public static bool textOnScreen = false;
+    public static List<string> queuedUnlocks = new List<string>();
 
 	// Use this for initialization
 	void Start () {
@@ -48,7 +49,21 @@ public class StateManager : MonoBehaviour {
                 }
             }
         }
+        CheckQueuedUnlocks();
         Debug.Log("Restored state.");
+    }
+
+    private static void CheckQueuedUnlocks()
+    {
+        for (int i = 0; i < queuedUnlocks.Count; i++)
+        {
+            var tryUnlock = SceneManager.UnlockSceneObject(queuedUnlocks[i]);
+            if (tryUnlock)
+            {
+                queuedUnlocks.RemoveAt(i);
+                i--;
+            }
+        }
     }
 
     /// <summary>

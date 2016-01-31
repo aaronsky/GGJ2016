@@ -351,6 +351,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11421356, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: unlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 462412, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.57000005
@@ -439,6 +443,10 @@ Prefab:
     - target: {fileID: 11421356, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
       propertyPath: startsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421356, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
+      propertyPath: unlocks.Array.data[0]
+      value: GraffitiPoster-1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
