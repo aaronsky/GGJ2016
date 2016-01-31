@@ -1110,10 +1110,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
   m_IsPrefabParent: 0
-<<<<<<< Updated upstream
---- !u!4 &1718916769 stripped
-Transform:
-=======
 --- !u!1 &1524352916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1242,6 @@ Transform:
   m_RootOrder: 15
 --- !u!4 &1718916769 stripped
 Transform:
->>>>>>> Stashed changes
   m_PrefabParentObject: {fileID: 462412, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
   m_PrefabInternal: {fileID: 1300968745}
 --- !u!1 &1767186172
@@ -1460,8 +1455,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1867231622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,7 +1545,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 3
->>>>>>> Stashed changes
 --- !u!1 &2129133252
 GameObject:
   m_ObjectHideFlags: 0
