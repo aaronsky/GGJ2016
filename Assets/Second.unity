@@ -126,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 402532, guid: d1cc7771748f41b47a36f9902a8537e7, type: 2}
       propertyPath: m_LocalScale.x
-      value: 3.59564757
+      value: 3.41586494
       objectReference: {fileID: 0}
     - target: {fileID: 402532, guid: d1cc7771748f41b47a36f9902a8537e7, type: 2}
       propertyPath: m_LocalScale.y
@@ -288,6 +288,22 @@ Prefab:
     - target: {fileID: 166484, guid: bc95bb54fcecedb4d9f6fb8873878839, type: 2}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 22480452, guid: bc95bb54fcecedb4d9f6fb8873878839, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 346
+      objectReference: {fileID: 0}
+    - target: {fileID: 22480452, guid: bc95bb54fcecedb4d9f6fb8873878839, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 22484550, guid: bc95bb54fcecedb4d9f6fb8873878839, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 308
+      objectReference: {fileID: 0}
+    - target: {fileID: 22484550, guid: bc95bb54fcecedb4d9f6fb8873878839, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 92
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc95bb54fcecedb4d9f6fb8873878839, type: 2}
@@ -545,8 +561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b86b487b9eaf354f920f22a175d46ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stops:
-  - Park
   ticks: 0500000008000000
 --- !u!1 &1861696411
 GameObject:

@@ -400,7 +400,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 402532, guid: d1cc7771748f41b47a36f9902a8537e7, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 402532, guid: d1cc7771748f41b47a36f9902a8537e7, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3.69999981
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1cc7771748f41b47a36f9902a8537e7, type: 2}
@@ -830,7 +834,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 427.799988, y: 261}
+  m_AnchoredPosition: {x: 307, y: 93}
   m_SizeDelta: {x: 115.900002, y: 81.9000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &798522108
@@ -1286,7 +1290,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 476.899994, y: 275.399994}
+  m_AnchoredPosition: {x: 356, y: 108}
   m_SizeDelta: {x: 75.5, y: 44.2999992}
   m_Pivot: {x: 1.00000024, y: .49999997}
 --- !u!114 &1377878936
