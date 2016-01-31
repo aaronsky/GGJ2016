@@ -98,7 +98,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 447658, guid: 8831df9924d546342bd3ce593f469003, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.79999995
+      value: -3.38000011
       objectReference: {fileID: 0}
     - target: {fileID: 447658, guid: 8831df9924d546342bd3ce593f469003, type: 2}
       propertyPath: m_LocalPosition.z
@@ -128,9 +128,16 @@ Prefab:
       propertyPath: spotLight
       value: 
       objectReference: {fileID: 1232041405}
+    - target: {fileID: 447658, guid: 8831df9924d546342bd3ce593f469003, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 447658, guid: 8831df9924d546342bd3ce593f469003, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8831df9924d546342bd3ce593f469003, type: 2}
-  m_RootGameObject: {fileID: 1896022960}
   m_IsPrefabParent: 0
 --- !u!1001 &36608417
 Prefab:
@@ -238,7 +245,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_RootGameObject: {fileID: 1822104111}
   m_IsPrefabParent: 0
 --- !u!1 &188347489
 GameObject:
@@ -434,7 +440,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_RootGameObject: {fileID: 1540226448}
   m_IsPrefabParent: 0
 --- !u!1001 &388361041
 Prefab:
@@ -562,101 +567,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_RootGameObject: {fileID: 1159092223}
   m_IsPrefabParent: 0
---- !u!1 &658627751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 149340, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 1415768296}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 658627755}
-  - 212: {fileID: 658627754}
-  - 114: {fileID: 658627753}
-  - 60: {fileID: 658627752}
-  m_Layer: 0
-  m_Name: Table
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &658627752
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1415768296}
-  m_GameObject: {fileID: 658627751}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -.752394974, y: .466810554}
-      - {x: -.693577826, y: -.593748748}
-      - {x: .829051673, y: -.212934524}
-      - {x: .825916648, y: .551435888}
---- !u!114 &658627753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11421356, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1415768296}
-  m_GameObject: {fileID: 658627751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a67a96bebbdcb84ba5dafbc282e2b10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: You jump on the bed.
-  unlocks: []
-  ID: 0
-  startsActive: 0
---- !u!212 &658627754
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21259578, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1415768296}
-  m_GameObject: {fileID: 658627751}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fd04336112852d44290744dcfc09f723, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ebc5c91e8dc29b44484d0ab2a53d063d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &658627755
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 462412, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 1415768296}
-  m_GameObject: {fileID: 658627751}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.72999954, y: -2.8499999, z: 0}
-  m_LocalScale: {x: 3.04444838, y: 2.11597276, z: 11.5117493}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
 --- !u!1001 &855055210
 Prefab:
   m_ObjectHideFlags: 0
@@ -767,103 +678,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_RootGameObject: {fileID: 1415775119}
   m_IsPrefabParent: 0
---- !u!1 &1159092223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 149340, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 388361041}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1159092227}
-  - 212: {fileID: 1159092226}
-  - 114: {fileID: 1159092225}
-  - 60: {fileID: 1159092224}
-  m_Layer: 0
-  m_Name: Bed
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &1159092224
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 388361041}
-  m_GameObject: {fileID: 1159092223}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 1.10543323, y: .309510678}
-      - {x: .1286439, y: .522068501}
-      - {x: -1.01683831, y: .702157259}
-      - {x: -1.01683807, y: -.62837261}
-      - {x: .754700243, y: -.646818399}
-      - {x: 1.13473666, y: -.0172398202}
---- !u!114 &1159092225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11421356, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 388361041}
-  m_GameObject: {fileID: 1159092223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a67a96bebbdcb84ba5dafbc282e2b10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: You jump on the bed.
-  unlocks: []
-  ID: 1
-  startsActive: 1
---- !u!212 &1159092226
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21259578, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 388361041}
-  m_GameObject: {fileID: 1159092223}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fd04336112852d44290744dcfc09f723, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 07c944f2f916eab4b8df026f640f1e54, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &1159092227
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 462412, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 388361041}
-  m_GameObject: {fileID: 1159092223}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.31999969, y: -3.30999994, z: 0}
-  m_LocalScale: {x: 2.60575843, y: 2.26588798, z: 1.03839862}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1 &1232041403
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +688,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1232041404}
   - 108: {fileID: 1232041405}
+  - 114: {fileID: 1232041406}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -924,6 +740,24 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &1232041406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232041403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3acabfeb24a2fd646a0fb9c7af8ebb66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 13
+  smallZ: -5
+  bigZ: -21
+  smallRange: 10
+  bigRange: 41
+  smallAngle: 30
+  bigAngle: 144
 --- !u!1001 &1300968745
 Prefab:
   m_ObjectHideFlags: 0
@@ -1038,7 +872,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_RootGameObject: {fileID: 1512041300}
   m_IsPrefabParent: 0
 --- !u!1 &1349839776
 GameObject:
@@ -1177,291 +1010,11 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_RootGameObject: {fileID: 658627751}
   m_IsPrefabParent: 0
---- !u!1 &1415775119
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 149340, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 855055210}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1415775123}
-  - 212: {fileID: 1415775122}
-  - 114: {fileID: 1415775121}
-  - 60: {fileID: 1415775120}
-  m_Layer: 0
-  m_Name: Window
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &1415775120
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 855055210}
-  m_GameObject: {fileID: 1415775119}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -.793649375, y: .743247032}
-      - {x: -.825231969, y: -.758393645}
-      - {x: .808262765, y: -.745343924}
-      - {x: .835759401, y: .743247032}
---- !u!114 &1415775121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11421356, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 855055210}
-  m_GameObject: {fileID: 1415775119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a67a96bebbdcb84ba5dafbc282e2b10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: You open the curtains.
-  unlocks: []
-  ID: 1
-  startsActive: 1
---- !u!212 &1415775122
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21259578, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 855055210}
-  m_GameObject: {fileID: 1415775119}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fd04336112852d44290744dcfc09f723, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 448cb8d862e927b43ba9ca4c743f7fa6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &1415775123
+--- !u!4 &1718916769 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 462412, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 855055210}
-  m_GameObject: {fileID: 1415775119}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: .720000029, z: 0}
-  m_LocalScale: {x: 3.34283876, y: 2.32336187, z: 12.6400309}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
---- !u!1 &1512041300
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 149340, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 1300968745}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1718916769}
-  - 212: {fileID: 1512041303}
-  - 114: {fileID: 1512041302}
-  - 60: {fileID: 1512041301}
-  m_Layer: 0
-  m_Name: Phone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &1512041301
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1300968745}
-  m_GameObject: {fileID: 1512041300}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -.196828842, y: .217107072}
-      - {x: -.227263048, y: -.166574001}
-      - {x: .281122148, y: -.206999943}
-      - {x: .227263451, y: .196893841}
---- !u!114 &1512041302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11421356, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1300968745}
-  m_GameObject: {fileID: 1512041300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a67a96bebbdcb84ba5dafbc282e2b10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: You call your grandma.
-  unlocks: []
-  ID: 1
-  startsActive: 0
---- !u!212 &1512041303
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21259578, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1300968745}
-  m_GameObject: {fileID: 1512041300}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fd04336112852d44290744dcfc09f723, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 47b8ebec0e600c24ea1a2ba1d043bef4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &1540226448
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 149340, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 333062477}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1540226452}
-  - 212: {fileID: 1540226451}
-  - 114: {fileID: 1540226450}
-  - 60: {fileID: 1540226449}
-  m_Layer: 0
-  m_Name: Dresser
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &1540226449
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 333062477}
-  m_GameObject: {fileID: 1540226448}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -.553093016, y: .670660913}
-      - {x: -.530256987, y: -.740989387}
-      - {x: -.329711497, y: -.500263274}
-      - {x: .285896599, y: -.487040162}
-      - {x: .504623771, y: -.719145}
-      - {x: .565154672, y: .661502063}
---- !u!114 &1540226450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11421356, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 333062477}
-  m_GameObject: {fileID: 1540226448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a67a96bebbdcb84ba5dafbc282e2b10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: You put on a shirt.
-  unlocks:
-  - Phone-1
-  ID: 1
-  startsActive: 1
---- !u!212 &1540226451
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21259578, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 333062477}
-  m_GameObject: {fileID: 1540226448}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fd04336112852d44290744dcfc09f723, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 009a18be5d747df47b3fbfd2e6397730, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &1540226452
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 462412, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 333062477}
-  m_GameObject: {fileID: 1540226448}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.689999998, y: -2.33999991, z: 0}
-  m_LocalScale: {x: 2.40251517, y: 2.60845757, z: 2.02557349}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
---- !u!4 &1718916769
-Transform:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 462412, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
   m_PrefabInternal: {fileID: 1300968745}
-  m_GameObject: {fileID: 1512041300}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.77999997, y: -1.94000006, z: 0}
-  m_LocalScale: {x: 2.29143214, y: 2.50177741, z: 3.13105488}
-  m_Children:
-  - {fileID: 2129133254}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
 --- !u!1 &1767186172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,99 +1140,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 47c9d8b6670c8004dbb735954608f7a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &1822104111
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 149340, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 36608417}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1822104115}
-  - 212: {fileID: 1822104114}
-  - 114: {fileID: 1822104113}
-  - 60: {fileID: 1822104112}
-  m_Layer: 0
-  m_Name: Chair
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &1822104112
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6088060, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 36608417}
-  m_GameObject: {fileID: 1822104111}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -.384350657, y: .683965564}
-      - {x: -.372673601, y: -.566360295}
-      - {x: .352454245, y: -.499156803}
-      - {x: .302611679, y: .398352653}
---- !u!114 &1822104113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11421356, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 36608417}
-  m_GameObject: {fileID: 1822104111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a67a96bebbdcb84ba5dafbc282e2b10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: You jump on the bed.
-  unlocks: []
-  ID: 1
-  startsActive: 1
---- !u!212 &1822104114
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21259578, guid: 18f84d62f5e9aa443b8b9cfe856a322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 36608417}
-  m_GameObject: {fileID: 1822104111}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fd04336112852d44290744dcfc09f723, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e1819a42872be6d4ba249d540a4aa832, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &1822104115
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 462412, guid: 18f84d62f5e9aa443b8b9cfe856a322c, type: 2}
-  m_PrefabInternal: {fileID: 36608417}
-  m_GameObject: {fileID: 1822104111}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.26999998, y: -2.68000007, z: 0}
-  m_LocalScale: {x: 3.83370972, y: 2.66453004, z: 14.4961262}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
 --- !u!1 &1846631731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,98 +1226,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1 &1896022960
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 156656, guid: 8831df9924d546342bd3ce593f469003, type: 2}
-  m_PrefabInternal: {fileID: 11872241}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1896022964}
-  - 212: {fileID: 1896022963}
-  - 114: {fileID: 1896022962}
-  - 95: {fileID: 1896022961}
-  m_Layer: 0
-  m_Name: Character
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &1896022961
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9563034, guid: 8831df9924d546342bd3ce593f469003,
-    type: 2}
-  m_PrefabInternal: {fileID: 11872241}
-  m_GameObject: {fileID: 1896022960}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e691041386160424397bfe2898c25170, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &1896022962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11499956, guid: 8831df9924d546342bd3ce593f469003,
-    type: 2}
-  m_PrefabInternal: {fileID: 11872241}
-  m_GameObject: {fileID: 1896022960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be63720101ff8cc4d98beb4f72c4625d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spotLight: {fileID: 1232041405}
-  animator: {fileID: 0}
-  FacingRight: 0
---- !u!212 &1896022963
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21286302, guid: 8831df9924d546342bd3ce593f469003,
-    type: 2}
-  m_PrefabInternal: {fileID: 11872241}
-  m_GameObject: {fileID: 1896022960}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 925879a91ab5ca24bb9ea27c5d1cc024, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &1896022964
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 447658, guid: 8831df9924d546342bd3ce593f469003, type: 2}
-  m_PrefabInternal: {fileID: 11872241}
-  m_GameObject: {fileID: 1896022960}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8599999, y: -2.79999995, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
 --- !u!1 &2129133252
 GameObject:
   m_ObjectHideFlags: 0

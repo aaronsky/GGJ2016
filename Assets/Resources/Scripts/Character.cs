@@ -18,7 +18,6 @@ public class Character : MonoBehaviour {
         frameSize.x = tex.width / 2;
         frameSize.y = tex.height / 4;
         spriteRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, frameSize.x, frameSize.y), new Vector2(0.5f, 0));
-        transform.localScale = new Vector3(3, 3);
 	}
 	
 	// Update is called once per frame
