@@ -12,12 +12,13 @@ public class Office : MonoBehaviour {
         Timer.Subscribe(Leave, 17, 0);
         var go = GameObject.Find("Character");
         player = go.GetComponent<Character>();
-        destination = 0;
+        chairPosition = GameObject.Find("ChairArm").transform.position.x;
+        destination = chairPosition;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (!player.hasBrokenOut || !player.inputEnabled)
+        if (!player.hasBrokenOut && !player.sitting || !player.inputEnabled)
         {
             var xpos = player.transform.position.x;
             var move = player.moveSpeed * Time.deltaTime;
@@ -27,10 +28,12 @@ public class Office : MonoBehaviour {
                 var pos = player.transform.position;
                 pos.x = destination;
                 player.transform.position = pos;
-                /*if (destination == chairPosition)
+                if (destination == chairPosition)
                 {
-                    player.Sit(chairPosition + 0.5f, GameObject.Find("Chair").transform.position.y + 1);
-                }*/
+                    player.Sit(chairPosition, GameObject.Find("ChairArm").transform.position.y + 1);
+                    if (player.FacingRight)
+                        player.Flip();
+                }
             }
             //player is to the left of destination
             else if (xpos < destination - move)
