@@ -7,6 +7,7 @@ public class StateManager : MonoBehaviour {
     public static Dictionary<string, Dictionary<string, bool>> activeList;
     public static List<string> cleanLevels = new List<string>();
     public static int SubwayDirection;
+    public static bool textOnScreen = false;
 
 	// Use this for initialization
 	void Start () {

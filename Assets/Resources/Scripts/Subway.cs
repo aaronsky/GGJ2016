@@ -29,7 +29,7 @@ public class Subway : MonoBehaviour {
         else
         {
             ticksToNextStop = ticks[ticks.Count - 1];
-            currentStop = stops.Count - 1;
+            currentStop = stops.Count;
         }
         Timer.Subscribe(SubwayStop);
     }

@@ -15,8 +15,9 @@ public class Character : MonoBehaviour {
     public float moveSpeed;
     public float walkHeight;
 
+    public bool inputEnabled = true;
     public bool hasBrokenOut = false;
-    public bool cleanButtonSeparation = false;
+    private bool cleanButtonSeparation = false;
     private bool firstFrame = true;
 
     // Use this for initialization
@@ -101,12 +102,12 @@ public class Character : MonoBehaviour {
         {
             cleanButtonSeparation = true;
         }
-        else if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && cleanButtonSeparation)
+        else if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && cleanButtonSeparation && inputEnabled)
         {
             hasBrokenOut = true;
             MoveRight();
         }
-        else if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && cleanButtonSeparation)
+        else if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && cleanButtonSeparation && inputEnabled)
         {
             hasBrokenOut = true;
             MoveLeft();

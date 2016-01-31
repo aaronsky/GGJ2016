@@ -76,7 +76,7 @@ public class SceneObject : MonoBehaviour {
 	
     public void OnMouseDown()
     {
-        if (!enabled)
+        if (!enabled || StateManager.textOnScreen)
             return;
 		GenerateTextBox ("010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111");
 		//GenerateTextBox ("");
@@ -122,6 +122,7 @@ public class SceneObject : MonoBehaviour {
 		var writer = textBox.GetComponentInChildren<Writer> ();
 
 		if (textBox != null && writer != null) {
+            StateManager.textOnScreen = true;
 			writer.SetText(s);
 
 			Renderer boxRend = textBox.GetComponent<Renderer> ();

@@ -67,6 +67,7 @@ public class Apartment : MonoBehaviour {
     public void LeaveLastMinute(int hour, int minute)
     {
         player.Stand();
+        player.inputEnabled = false;
         destination = 10;
     }
 }

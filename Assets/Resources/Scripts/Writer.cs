@@ -9,19 +9,26 @@ public class Writer : MonoBehaviour {
 	public TextMesh content;
 	Queue<string> displays = new Queue<string>();
 
+    private float levelTickInterval;
+    private float textTickInterval = 0.1f;
+
 	// Use this for initialization
 	void Start () {
 		//displayText = "42";
 		//displays = new Queue<string>();
 		content = GetComponent<TextMesh>();
 		content.text = displayText;
+        GetComponent<Renderer>().sortingOrder = 7;
+        levelTickInterval = textTickInterval;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	}
 
-	public void SetText (string s) { 
+	public void SetText (string s) {
+        StateManager.textOnScreen = true;
+        
 
 		string temp = "";
 
@@ -41,9 +48,7 @@ public class Writer : MonoBehaviour {
 		}
 
 		displays.Enqueue(temp);
-
-			UpdateText (displays.Dequeue());
-
+		UpdateText (displays.Dequeue());
 	}
 
 	public void UpdateText (string display) {
@@ -55,12 +60,8 @@ public class Writer : MonoBehaviour {
 		//Queue 
 	}
 
-	public void OnMouseDown()
+	public void OnClick()
 	{
-		//Renderer[] renderers = gameObject.GetComponentsInParent<Renderer> ();
-
-		//foreach (Renderer r in renderers)
-			//r.enabled = false;
 		if(displays.Count != 0) 
 			UpdateText (displays.Dequeue());
 		else
@@ -72,5 +73,7 @@ public class Writer : MonoBehaviour {
 		
 		foreach (Renderer r in renderers)
 			r.enabled = false;
-	}
+        StateManager.textOnScreen = false;
+       
+    }
 }
