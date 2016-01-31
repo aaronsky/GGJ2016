@@ -31,6 +31,14 @@ public class Character : MonoBehaviour {
         Stand();
     }
 
+    public void Flip()
+    {
+        FacingRight = !FacingRight;
+        var scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
+
     public void MoveLeft()
     {
         Stand();
@@ -146,6 +154,9 @@ public class Character : MonoBehaviour {
         {
             spotLight.transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
         }
+        var pos = spotLight.transform.position;
+        pos.y = transform.position.y;
+        spotLight.transform.position = pos;
         firstFrame = false;
     }
 }

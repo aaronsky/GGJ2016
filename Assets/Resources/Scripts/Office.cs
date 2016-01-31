@@ -17,31 +17,32 @@ public class Office : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        var xpos = player.transform.position.x;
-        var move = player.moveSpeed * Time.deltaTime;
-        //player is within move distance of destination
-        if (Mathf.Abs(xpos - destination) < move)
+        if (!player.hasBrokenOut || !player.inputEnabled)
         {
-            var pos = player.transform.position;
-            pos.x = destination;
-            player.transform.position = pos;
-            /*if (destination == chairPosition)
+            var xpos = player.transform.position.x;
+            var move = player.moveSpeed * Time.deltaTime;
+            //player is within move distance of destination
+            if (Mathf.Abs(xpos - destination) < move)
             {
-                player.Sit(chairPosition + 0.5f, GameObject.Find("Chair").transform.position.y + 1);
-            }*/
+                var pos = player.transform.position;
+                pos.x = destination;
+                player.transform.position = pos;
+                /*if (destination == chairPosition)
+                {
+                    player.Sit(chairPosition + 0.5f, GameObject.Find("Chair").transform.position.y + 1);
+                }*/
+            }
+            //player is to the left of destination
+            else if (xpos < destination - move)
+            {
+                player.MoveRight();
+            }
+            //player is to the right of destination
+            else
+            {
+                player.MoveLeft();
+            }
         }
-        //player is to the left of destination
-        else if (xpos < destination - move)
-        {
-            player.MoveRight();
-        }
-        //player is to the right of destination
-        else
-        {
-            player.MoveLeft();
-        }
-
         if (player.transform.position.x == -10)
         {
             StateManager.SubwayDirection = -1;

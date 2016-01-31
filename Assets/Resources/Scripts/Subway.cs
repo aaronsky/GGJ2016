@@ -19,7 +19,8 @@ public class Subway : MonoBehaviour {
 	void Start () {
         var go = GameObject.Find("Character");
         player = go.GetComponent<Character>();
-        player.Sit(5, -2);
+        player.Sit(6, 1);
+        player.Flip();
         direction = StateManager.SubwayDirection;
         if (direction > 0)
         {
