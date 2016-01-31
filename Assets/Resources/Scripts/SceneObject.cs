@@ -8,6 +8,7 @@ public class SceneObject : MonoBehaviour {
     public string text;
     public List<string> unlocks;
     public int ID;
+	public GameObject textBox;
 
     public bool startsActive;
 
@@ -77,7 +78,8 @@ public class SceneObject : MonoBehaviour {
     {
         if (!enabled)
             return;
-		GenerateTextBox ("Hello world!");
+		GenerateTextBox ("010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111");
+		//GenerateTextBox ("");
         var player = GameObject.Find("Character");
         if (player != null)
         {
@@ -115,7 +117,8 @@ public class SceneObject : MonoBehaviour {
 
 	public void GenerateTextBox (string s)
 	{
-		/*var textBox = GameObject.Find("TextBox");
+
+		var textBox = GameObject.Find("TextBox");
 		var writer = textBox.GetComponentInChildren<Writer> ();
 
 		if (textBox != null && writer != null) {
@@ -131,7 +134,7 @@ public class SceneObject : MonoBehaviour {
 		} else {
 			Debug.Log("Didn't find TextBox GameObject!");
 		}
-        */
+
 
 	}
 

@@ -678,6 +678,14 @@ Prefab:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1235547018}
+    - target: {fileID: 11499956, guid: 8831df9924d546342bd3ce593f469003, type: 2}
+      propertyPath: walkHeight
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499956, guid: 8831df9924d546342bd3ce593f469003, type: 2}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8831df9924d546342bd3ce593f469003, type: 2}
   m_IsPrefabParent: 0

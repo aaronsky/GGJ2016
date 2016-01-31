@@ -228,7 +228,7 @@ Transform:
   m_LocalScale: {x: .557020724, y: .471607596, z: .133828267}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1234752647
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1713410407
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5390c56d27000da46bbdd40aeff89b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &1861696411
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +667,14 @@ Prefab:
       propertyPath: spotLight
       value: 
       objectReference: {fileID: 1861696412}
+    - target: {fileID: 11499956, guid: 8831df9924d546342bd3ce593f469003, type: 2}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499956, guid: 8831df9924d546342bd3ce593f469003, type: 2}
+      propertyPath: walkHeight
+      value: -3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8831df9924d546342bd3ce593f469003, type: 2}
   m_IsPrefabParent: 0
